@@ -28,11 +28,7 @@ class _LoginIcon extends StatelessWidget {
       child: SizedBox(
           width: double.infinity,
           height: 200,
-          child: Icon(
-            Icons.person_pin,
-            size: 100,
-            color: Colors.white,
-          )),
+          child: Image(image: AssetImage('assets/logo.png'))),
     );
   }
 }

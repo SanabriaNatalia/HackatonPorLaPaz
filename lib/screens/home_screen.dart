@@ -23,10 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         getAndSetUserLocation(context, userLocation);
       }
     });
-    return Center(
-      child: Text(
-          'Localizacion del usuario: ${userLocation.latitude}, ${userLocation.longitude}'),
-    );
+    return const Center(child: Text('Herramientas'));
   }
 }
 

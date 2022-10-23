@@ -9,7 +9,8 @@ class WarningScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UserLocation userLocation = Provider.of<UserLocation>(context);
+    UserLocation userLocation =
+        Provider.of<UserLocation>(context, listen: false);
     handleLocationPermission(context).then((hasPermission) {
       if (hasPermission) {
         getAndSetUserLocation(context, userLocation);
@@ -35,11 +36,12 @@ class WarningScreen extends StatelessWidget {
 void sendSMSDialog(latitud, longitud) async {
   String username = 'Laura Poveda';
   String status = 'cubriendo el paro nacional en Cúcuta';
-  String time = '14:00';
+  String currentHourMinutes = DateTime.now().toString().substring(11, 16);
+
   List<String> recipients = ['+573114847430', "+573213332722"];
 
   String message =
-      'Soy $username, estoy $status a las $time en [$latitud, $longitud] #Diametro';
+      'Soy $username, estoy $status a las $currentHourMinutes en [$latitud, $longitud] #Diametro';
   await sendSMS(message: message, recipients: recipients, sendDirect: true);
 }
 
