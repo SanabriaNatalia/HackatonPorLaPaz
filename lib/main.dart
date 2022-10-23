@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gabo/screens/home_screen.dart';
 
 void main() => runApp(const Diametro());
 
@@ -8,15 +9,10 @@ class Diametro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => const HomeScreen(),
+      },
     );
   }
 }
