@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gabo/screens/binnacle_screen.dart';
 import 'package:gabo/screens/home_screen.dart';
+import 'package:gabo/screens/warning_screen.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavigator extends StatelessWidget {
@@ -23,6 +25,9 @@ class _Nav extends StatelessWidget {
     final navigationModel = Provider.of<_NavigationModel>(context);
 
     return BottomNavigationBar(
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      iconSize: 30,
       selectedItemColor: Colors.red,
       currentIndex: navigationModel.currentScreen,
       onTap: (int index) {
@@ -31,11 +36,15 @@ class _Nav extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_rounded),
-          label: 'For you',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.trending_up_rounded),
-          label: 'Trending',
+          icon: Icon(Icons.warning_rounded),
+          label: 'Warning',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.book_rounded),
+          label: 'Bitacora',
         ),
       ],
     );
@@ -53,7 +62,7 @@ class _Tabs extends StatelessWidget {
     return PageView(
       physics: const NeverScrollableScrollPhysics(),
       controller: navigationModel.pageController,
-      children: const [HomeScreen()],
+      children: const [HomeScreen(), WarningScreen(), BinnacleScreen()],
     );
   }
 }

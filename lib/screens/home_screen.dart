@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const routeName = '/';
+  static const routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Center(
+      child: Text('Home'),
+    );
   }
 }
