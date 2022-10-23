@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 class BottomNavigator extends StatelessWidget {
   const BottomNavigator({super.key});
 
+  static const routeName = '/bottomNavigator';
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
