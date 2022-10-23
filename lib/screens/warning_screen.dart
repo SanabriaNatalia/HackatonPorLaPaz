@@ -38,11 +38,14 @@ void sendSMSDialog(latitud, longitud) async {
   String status = 'cubriendo el paro nacional en Cúcuta';
   String currentHourMinutes = DateTime.now().toString().substring(11, 16);
 
-  List<String> recipients = ['+573114847430', "+573213332722"];
+  List<String> recipients = ['+573175860904', '+573213332722'];
 
   String message =
       'Soy $username, estoy $status a las $currentHourMinutes en [$latitud, $longitud] #Diametro';
-  await sendSMS(message: message, recipients: recipients, sendDirect: true);
+  String result =
+      await sendSMS(message: message, recipients: recipients, sendDirect: true);
+
+  print(result);
 }
 
 void _showDialog(context, latitude, longitude) {
