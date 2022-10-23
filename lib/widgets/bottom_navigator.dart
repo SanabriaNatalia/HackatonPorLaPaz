@@ -37,12 +37,12 @@ class _Nav extends StatelessWidget {
       },
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_rounded),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
           icon: Icon(Icons.warning_rounded),
           label: 'Warning',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.insert_chart_outlined),
+          label: 'Info',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.book_rounded),
@@ -64,7 +64,7 @@ class _Tabs extends StatelessWidget {
     return PageView(
       physics: const NeverScrollableScrollPhysics(),
       controller: navigationModel.pageController,
-      children: const [HomeScreen(), WarningScreen(), BinnacleScreen()],
+      children: const [WarningScreen(), HomeScreen(), BinnacleScreen()],
     );
   }
 }
