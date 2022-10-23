@@ -51,20 +51,21 @@ class _LoginForm extends StatelessWidget {
         child: Column(children: [
           TextFormField(
             autocorrect: false,
-            keyboardType: TextInputType.emailAddress,
+            keyboardType: TextInputType.number,
             onChanged: (value) => {},
             decoration: InputDecorations.authInputDecoration(
                 hintText: "",
-                labelText: "Cédula",
-                prefixIcon: Icons.perm_identity_rounded),
+                labelText: "Celular",
+                prefixIcon: Icons.phone_android_rounded),
             validator: (value) {
               if (value != null && value.isEmpty) {
-                return "El correo electrónico es requerido";
+                return 'Ingrese su celular';
               }
-              String pattern =
-                  r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+              String pattern = r'(3[0-9]{9})';
               RegExp regExp = RegExp(pattern);
-              return regExp.hasMatch(value ?? "") ? null : "Correo inválido";
+              return regExp.hasMatch(value ?? "")
+                  ? null
+                  : "Numero de celular inválido";
             },
           ),
           const SizedBox(height: 30),
@@ -74,7 +75,7 @@ class _LoginForm extends StatelessWidget {
               keyboardType: TextInputType.text,
               onChanged: (value) => {},
               decoration: InputDecorations.authInputDecoration(
-                  hintText: "*********",
+                  hintText: "",
                   labelText: "Contraseña",
                   prefixIcon: Icons.lock,
                   isPassword: true),

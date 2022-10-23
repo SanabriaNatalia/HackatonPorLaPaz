@@ -8,10 +8,10 @@ class InputDecorations {
       bool isPassword = false}) {
     return InputDecoration(
       enabledBorder: const UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.deepPurple),
+        borderSide: BorderSide(color: Color.fromARGB(255, 0, 199, 186)),
       ),
       focusedBorder: const UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.deepPurple, width: 2),
+        borderSide: BorderSide(color: Color.fromARGB(255, 0, 199, 186)),
       ),
       labelText: labelText,
       labelStyle: const TextStyle(color: Colors.grey),

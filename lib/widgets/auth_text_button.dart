@@ -16,7 +16,8 @@ class AuthTextButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
           shape: MaterialStateProperty.all(const StadiumBorder()),
-          overlayColor: MaterialStateProperty.all(Colors.indigo.withAlpha(25))),
+          overlayColor: MaterialStateProperty.all(
+              const Color.fromARGB(255, 0, 199, 186))),
       child: Text(
         text,
         style: const TextStyle(
